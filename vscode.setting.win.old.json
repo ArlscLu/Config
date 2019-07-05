@@ -1,0 +1,48 @@
+{
+    "workbench.colorTheme": "Adapta Nokto",
+    "workbench.activityBar.visible": false,
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "vscode-great-icons",
+    "window.openFoldersInNewWindow": "on",
+    //"phpcs.standard": "PSR2",
+    "files.eol": "\n",
+    "editor.fontSize": 12.8,
+    "editor.fontWeight": "bold",
+    "workbench.editor.enablePreview": false,
+    "editor.showFoldingControls": "always",
+    "typescript.check.npmIsInstalled": false,
+    "explorer.autoReveal": false,
+    "window.zoomLevel": -0.5,
+    "git.ignoreMissingGitWarning": true,
+    "files.associations": {
+        "*.phtml": "html"
+    },
+    "workbench.editor.tabSizing": "fit",
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "php.suggest.basic": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.runtime/temp": true
+      },
+    "debug.inlineValues": true,
+    "editor.lineNumbers": "off",
+    "editor.wrappingIndent": "indent",
+    "svn.path":"C:\\'Program Files'\\TortoiseSVN\\bin",
+    "scm.alwaysShowProviders": true,
+    "svn.multipleFolders.ignore": [
+    "**/.git",
+    "**/.hg",
+    "**/vendor",
+    "**/node_modules",
+    "**/#runtime"
+  ],
+  "window.title": "${dirty}${activeEditorShort}${separator}${folderName}${separator}",
+  "workbench.statusBar.feedback.visible": false,
+  "window.menuBarVisibility": "toggle",
+  "explorer.openEditors.visible": 0
+}
