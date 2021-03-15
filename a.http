@@ -1,0 +1,96 @@
+
+#api接口
+# http://dev-api-chengjinsheng.mingqijia.com/community/v1/task/progress
+
+# mobile-api转发调用方式                                    /community/v1/task/progress
+# 直接调用(需指定x-from-service = mobile-api)                  /api/v1/task/progress  
+
+
+#manage 接口
+## http://dev-api-chengjinsheng.mingqijia.com/api/proxy/community/manage/task/show
+
+#manage-api 转发方式                                    /api/proxy/community/manage/task/show
+#直接调用 (需指定x-from-service = manage-api)                   /manage/task/show
+
+###
+POST /api/manager/login HTTP/1.1
+Host: {{hostManage}}
+Content-Type: application/json
+X-FROM-SERVICE: mobile-api
+branchname: feature_app2.1.0_20191030
+Content-Length: 123
+
+{
+	"username": "admin",
+	"password": "Bb123456",
+	"cms_phone": " 13800000000",
+	"sms_code": "1",
+	"phone": " 13800000000"
+}
+###
+POST /v1_user_login/loginBySms HTTP/1.1
+Host: {{hostApi}}
+app-type: mqj
+app-platform: h5
+app-v: 10.0.1
+app-channel: 1
+app-os-version: 12.0
+app-device-model: iPhone
+app-device-id: rgw4wguneonfoewjoewifjweigjweogjoewigwege
+Content-Type: application/json
+ENTERPRISE-ID: 10000
+Content-Length: 64
+
+{
+ "phone": "13806129667",
+ "sms_code": "123456",
+ "site_id":1
+}
+###
+POST /api/proxy/community/manage/task/list HTTP/1.1
+Host: {{hostManage}}
+X-FROM-SERVICE: {{x-from-service-manage}}
+X-USERID: 1
+Authorization: {{auth}}
+Content-Type: application/json
+Content-Length: 2
+
+{}
+
+###
+POST /manage/task/switch HTTP/1.1
+Host: 127.0.0.1:9908
+X-FROM-SERVICE: manage-api
+X-USERID: 123456
+Content-Type: application/json
+Content-Length: 2
+
+{
+    "group_id":2
+}
+
+
+####
+POST /api/proxy/community/manage/task/show HTTP/1.1
+Host:{{hostManage}}
+X-FROM-SERVICE: manage-api
+X-USERID: 123456
+Authorization: {{auth}}
+Content-Type: application/json
+Content-Length: 2
+
+{
+    "group_id":1
+}
+###
+POST /community/v1/task/progress HTTP/1.1
+Host:{{hostApi}}
+X-FROM-SERVICE: {{x-from-service-mobile}}
+X-USERID: 1000007
+Content-Type: application/json
+Content-Length: 73
+
+{
+    "group_id":1,
+	"token":"ea34eb37-5c29-ec85-3d8a-ad403bf2e9f7-1-6"
+}
