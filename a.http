@@ -1,18 +1,18 @@
 
-#api接口
-# http://dev-api-chengjinsheng.mingqijia.com/community/v1/task/progress
+api接口
+http://dev-api-chengjinsheng.mingqijia.com/community/v1/task/progress
 
-# mobile-api转发调用方式                                    /community/v1/task/progress
-# 直接调用(需指定x-from-service = mobile-api)                  /api/v1/task/progress  
+mobile-api转发调用方式                                    /community/v1/task/progress
+直接调用(需指定x-from-service = mobile-api)                  /api/v1/task/progress  
 
 
-#manage 接口
-## http://dev-api-chengjinsheng.mingqijia.com/api/proxy/community/manage/task/show
+manage 接口
+# http://dev-api-chengjinsheng.mingqijia.com/api/proxy/community/manage/task/show
 
-#manage-api 转发方式                                    /api/proxy/community/manage/task/show
-#直接调用 (需指定x-from-service = manage-api)                   /manage/task/show
+manage-api 转发方式                                    /api/proxy/community/manage/task/show
+直接调用 (需指定x-from-service = manage-api)                   /manage/task/show
 
-###
+##
 POST /api/manager/login HTTP/1.1
 Host: {{hostManage}}
 Content-Type: application/json
@@ -80,9 +80,11 @@ Content-Type: application/json
 Content-Length: 2
 
 {
-    "group_id":1
+    "group_id":1,
+   "b":"{{backspace}}"
 }
 ###
+
 POST /community/v1/task/progress HTTP/1.1
 Host:{{hostApi}}
 X-FROM-SERVICE: {{x-from-service-mobile}}
@@ -94,3 +96,4 @@ Content-Length: 73
     "group_id":1,
 	"token":"ea34eb37-5c29-ec85-3d8a-ad403bf2e9f7-1-6"
 }
+###
